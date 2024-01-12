@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="960px" height="215px" viewBox="0 0 960 215" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Artboard Copy 6</title>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#7E3EFF" stop-opacity="0.5" offset="0%"></stop>
+            <stop stop-color="#73B3FF" stop-opacity="0.5" offset="100%"></stop>
+        </linearGradient>
+        <rect id="path-2" x="82" y="3" width="68" height="68" rx="8"></rect>
+        <rect id="path-3" x="82" y="80" width="68" height="68" rx="8"></rect>
+        <rect id="path-4" x="4" y="3" width="68" height="68" rx="8"></rect>
+        <rect id="path-5" x="4" y="80" width="68" height="68" rx="8"></rect>
+    </defs>
+    <g id="Artboard-Copy-6" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect fill="#151127" x="0" y="0" width="960" height="215"></rect>
+        <text id="DEVAPP" font-family="Helvetica-Bold, Helvetica" font-size="200" font-weight="bold" fill="#FFFFFF">
+            <tspan x="156.142578" y="148">DEVAPP</tspan>
+        </text>
+        <g id="Rectangle">
+            <use fill="#000000" xlink:href="#path-2"></use>
+            <use fill="url(#linearGradient-1)" xlink:href="#path-2"></use>
+        </g>
+        <g id="Rectangle">
+            <use fill="#000000" xlink:href="#path-3"></use>
+            <use fill="url(#linearGradient-1)" xlink:href="#path-3"></use>
+        </g>
+        <g id="Rectangle">
+            <use fill="#000000" xlink:href="#path-4"></use>
+            <use fill="url(#linearGradient-1)" xlink:href="#path-4"></use>
+        </g>
+        <g id="Rectangle">
+            <use fill="#000000" xlink:href="#path-5"></use>
+            <use fill="url(#linearGradient-1)" xlink:href="#path-5"></use>
+        </g>
+        <text id="SIFATLI-ONLAYN-TA’LI" font-family="HelveticaNeue-Bold, Helvetica Neue" font-size="40" font-weight="bold" fill="#FFFFFF">
+            <tspan x="253.72" y="209">SIFATLI ONLAYN TA’LIM</tspan>
+        </text>
+    </g>
+</svg>
