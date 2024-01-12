@@ -16,7 +16,7 @@
                       <b-col cols="12">
                         <div class="d-flex align-items-center justify-content-end my-1">
                           <b-button type="submit" variant="primary"
-                            @click.prevent="changeItem(get_item.id, get_item.status, 'comment')">
+                            @click.prevent="changeItem(get_item, get_item.status, 'comment')">
                             Save
                           </b-button>
                         </div>
@@ -47,7 +47,7 @@
                   <b-card no-body class="text-center mb-1 p-1">
                     <span>+{{ item.phone }}</span>
                     <span>{{ item.comment }}</span>
-                    <b-button @click="changeItem(item.id, 'my')" v-ripple.400="'rgba(255, 255, 255, 0.15)'" class=""
+                    <b-button @click="changeItem(item, 'my')" v-ripple.400="'rgba(255, 255, 255, 0.15)'" class=""
                       size="sm" block variant="primary">
                       To my list
                     </b-button>
@@ -82,15 +82,15 @@
                       block variant="primary">
                       Comment
                     </b-button>
-                    <b-button @click="changeItem(item.id, 'recall')" v-ripple.400="'rgba(255, 255, 255, 0.15)'" class=""
+                    <b-button @click="changeItem(item, 'recall')" v-ripple.400="'rgba(255, 255, 255, 0.15)'" class=""
                       size="sm" block variant="primary">
                       To recall
                     </b-button>
-                    <b-button @click="changeItem(item.id, 'didntpickup')" v-ripple.400="'rgba(255, 255, 255, 0.15)'"
+                    <b-button @click="changeItem(item, 'didntpickup')" v-ripple.400="'rgba(255, 255, 255, 0.15)'"
                       class="" size="sm" block variant="primary">
                       To didn't pickup
                     </b-button>
-                    <b-button @click="changeItem(item.id, 'coming')" v-ripple.400="'rgba(255, 255, 255, 0.15)'" class=""
+                    <b-button @click="changeItem(item, 'coming')" v-ripple.400="'rgba(255, 255, 255, 0.15)'" class=""
                       size="sm" block variant="primary">
                       To coming
                     </b-button>
@@ -120,11 +120,11 @@
                       block variant="primary">
                       Comment
                     </b-button>
-                    <b-button @click="changeItem(item.id, 'didntpickup')" v-ripple.400="'rgba(255, 255, 255, 0.15)'"
+                    <b-button @click="changeItem(item, 'didntpickup')" v-ripple.400="'rgba(255, 255, 255, 0.15)'"
                       class="" size="sm" block variant="primary">
                       To didn't pickup
                     </b-button>
-                    <b-button @click="changeItem(item.id, 'coming')" v-ripple.400="'rgba(255, 255, 255, 0.15)'" class=""
+                    <b-button @click="changeItem(item, 'coming')" v-ripple.400="'rgba(255, 255, 255, 0.15)'" class=""
                       size="sm" block variant="primary">
                       To coming
                     </b-button>
@@ -150,7 +150,7 @@
                   <b-card no-body class="text-center mb-1 p-1">
                     <span>+{{ item.phone }}</span>
                     <span>{{ item.comment }}</span>
-                    <b-button @click="changeItem(item.id, 'coming')" v-ripple.400="'rgba(255, 255, 255, 0.15)'" class=""
+                    <b-button @click="changeItem(item, 'coming')" v-ripple.400="'rgba(255, 255, 255, 0.15)'" class=""
                       size="sm" block variant="primary">
                       To coming
                     </b-button>
@@ -176,7 +176,7 @@
                   <b-card no-body class="text-center mb-1 p-1">
                     <span>+{{ item.phone }}</span>
                     <span>{{ item.comment }}</span>
-                    <b-button @click="changeItem(item.id, 'done')" v-ripple.400="'rgba(255, 255, 255, 0.15)'" class=""
+                    <b-button @click="changeItem(item, 'done')" v-ripple.400="'rgba(255, 255, 255, 0.15)'" class=""
                       size="sm" block variant="success">
                       Done
                     </b-button>
@@ -293,12 +293,14 @@ export default {
           }
         })
     },
-    changeItem(id, to_status, event) {
+    changeItem(item, to_status, event) {
       if (event == "comment") {
         this.$refs['modal-form'].hide();
+      }else{
+        this.comment = item.comment
       }
       let body = {
-        lead_id: id,
+        lead_id: item.id,
         to_status: to_status,
         comment: this.comment,
       }

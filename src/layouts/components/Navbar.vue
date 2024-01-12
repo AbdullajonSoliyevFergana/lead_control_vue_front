@@ -314,7 +314,7 @@ export default {
               component: ToastificationContent,
               position: "top-right",
               props: {
-                title: `Хайр`,
+                title: `Bye`,
                 icon: "LogOutIcon",
                 variant: "success",
                 text: `Bye!`,
@@ -364,7 +364,7 @@ export default {
               component: ToastificationContent,
               position: "top-right",
               props: {
-                title: `Хайр`,
+                title: `Bye`,
                 icon: "LogOutIcon",
                 variant: "success",
                 text: `Bye!`,
@@ -405,7 +405,7 @@ export default {
           component: ToastificationContent,
           position: "top-right",
           props: {
-            title: `Хайр`,
+            title: `Bye`,
             icon: "LogOutIcon",
             variant: "success",
             text: `Bye!`,

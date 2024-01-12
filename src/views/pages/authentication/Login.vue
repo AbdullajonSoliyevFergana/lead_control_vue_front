@@ -21,27 +21,27 @@
       <b-col lg="4" class="d-flex align-items-center auth-bg px-2 p-lg-5">
         <b-col sm="8" md="6" lg="12" class="px-xl-2 mx-auto">
           <b-card-title title-tag="h2" class="font-weight-bold mb-1">
-            Админ тизимга хуш келибсиз! 👋
+            Welcome to the admin system! 👋
           </b-card-title>
           <b-card-text class="mb-2">
-            Илтимос, Телефон рақамингиз ва паролингизни киритинг
+            Please enter your phone number and password
           </b-card-text>
 
           <!-- form -->
           <validation-observer ref="loginValidation">
             <b-form class="auth-login-form mt-2" @submit.prevent>
-              <!-- email -->
-              <b-form-group label="Телефон рақам" label-for="login-email">
+              <!-- login -->
+              <b-form-group label="Phone" label-for="login-login">
                 <validation-provider
                   #default="{ errors }"
-                  name="Телефон рақам"
+                  name="Phone"
                   rules="required"
                 >
                   <b-input-group prepend="+">
                     <b-form-input
                       type="number"
                       id="login"
-                      v-model="email"
+                      v-model="login"
                       :state="errors.length > 0 ? false : null"
                       name="login"
                       placeholder="998994630613"
@@ -49,14 +49,14 @@
                   </b-input-group>
 
                   <small class="text-danger">{{
-                    errors[0] != null ? "Телефон рақам майдонини киритиш шарт" : ""
+                    errors[0] != null ? "Set the Phone field" : ""
                   }}</small>
                 </validation-provider>
               </b-form-group>
 
               <!-- password -->
-              <b-form-group label="Пароль" label-for="login-password">
-                <validation-provider #default="{ errors }" name="Пароль" rules="required">
+              <b-form-group label="Password" label-for="login-password">
+                <validation-provider #default="{ errors }" name="Password" rules="required">
                   <b-input-group prepend="**">
                     <b-form-input
                       id="login-password"
@@ -68,7 +68,7 @@
                   </b-input-group>
 
                   <small class="text-danger">{{
-                    errors[0] != null ? "Парол майдони талаб қилинади" : ""
+                    errors[0] != null ? "A password field is required" : ""
                   }}</small>
                 </validation-provider>
               </b-form-group>
@@ -82,7 +82,7 @@
                 rounded="sm"
               >
                 <b-button type="submit" variant="primary" block @click="validationForm">
-                  Тизимга кириш
+                  Login
                 </b-button>
               </b-overlay>
             </b-form>
@@ -158,9 +158,8 @@ export default {
       loading: false,
       status: null,
       errors: null,
-      email: '998',
+      login: '998',
       password: null,
-      phone_prefix: "998",
       sideImg: require("@/assets/images/pages/login-v2.svg"),
       show: false,
     };
@@ -192,7 +191,7 @@ export default {
           this.show = true;
           api
             .adminLogin({
-              login: this.email,
+              login: this.login,
               password: this.password,
             })
             .then((response) => {
@@ -211,10 +210,10 @@ export default {
                     component: ToastificationContent,
                     position: "top-right",
                     props: {
-                      title: `Хуш келибсиз ${auth.name}`,
+                      title: `You are welcome ${auth.login}`,
                       icon: "CoffeeIcon",
                       variant: "success",
-                      text: `Сиз РОЛЕ -> ${auth.role} сифатида муваффақиятли тизимга кирдингиз. Энди сиз кашф қилишни бошлашингиз мумкин!`,
+                      text: `Role: ${auth.role}`,
                     },
                   });
                 });
@@ -225,7 +224,7 @@ export default {
                     component: ToastificationContent,
                     position: "top-right",
                     props: {
-                      title: `Хайр`,
+                      title: `Bye`,
                       icon: "LogOutIcon",
                       variant: "success",
                       text: `Bye!`,
