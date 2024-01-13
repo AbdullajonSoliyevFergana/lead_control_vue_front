@@ -26,7 +26,7 @@ import moment from 'moment';
 import io from 'socket.io-client';
 
 
-Vue.prototype.$socket = io(`http://localhost:3000/`);
+Vue.prototype.$socket = io(`http://leadsocket.abdullajonsoliyev.uz:3000/`);
 
 Vue.prototype.$moment = moment;
 

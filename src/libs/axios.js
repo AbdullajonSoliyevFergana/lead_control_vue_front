@@ -7,7 +7,7 @@ const token = localStorage.getItem('token')
 const axiosIns = axios.create({
     // You can add your headers here
     // ================================
-    baseURL:  "http://127.0.0.1:8081/",
+    baseURL:  "http://leadback.abdullajonsoliyev.uz/",
     // timeout: 1000,
     headers: { 'Token': token }
 })
